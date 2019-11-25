@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTableTest", "DataTableTest\DataTableTest.csproj", "{9FDCB73E-7DD8-4C73-8250-D5049A5CD96A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9FDCB73E-7DD8-4C73-8250-D5049A5CD96A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FDCB73E-7DD8-4C73-8250-D5049A5CD96A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FDCB73E-7DD8-4C73-8250-D5049A5CD96A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FDCB73E-7DD8-4C73-8250-D5049A5CD96A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BE1E2EE8-A7A8-42EB-ADCB-733E6AEA853D}
+	EndGlobalSection
+EndGlobal
