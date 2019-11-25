@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Linq.Dynamic;
 using System.Web;
 
 namespace DataTableTest.Services
@@ -34,7 +35,7 @@ namespace DataTableTest.Services
                                Lastname = m.Lastname,
                                Address1 = m.Address1,
                            })
-                           //.OrderBy(sortBy, sortDir) // have to give a default order when skipping .. so use the PK
+                           .OrderBy(sortBy, sortDir) // have to give a default order when skipping .. so use the PK
                            .Skip(skip)
                            .Take(take)
                            .ToList();
