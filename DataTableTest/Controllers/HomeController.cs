@@ -23,15 +23,20 @@ namespace DataTableTest.Controllers
             int totalResultsCount;
             var res = YourCustomSearchFunc(model, out filteredResultsCount, out totalResultsCount);
 
-            var result = new List<Person>(res.Count);
+            var result = new List<Customer>(res.Count);
             foreach (var s in res)
             {
                 // simple remapping adding extra info to found dataset
-                result.Add(new Person
+                result.Add(new Customer
                 {
-                    PersonId=s.PersonId,
-                    Firstname = s.Firstname,
-                    Lastname = s.Lastname,
+                    CustomerId = s.CustomerId,
+                    FirstName = s.FirstName,
+                    //Surname = s.Surname,
+                    Surname = "<a href='#'>Edit</a>",
+                    PassportNo = s.PassportNo,
+                    DateOfBirth=s.DateOfBirth,
+                    GenderId=s.GenderId,
+                    
                 });
             };
 
@@ -44,7 +49,7 @@ namespace DataTableTest.Controllers
                 data = result
             });
         }
-        public IList<Person> YourCustomSearchFunc(DataTableAjaxPostModel model, out int filteredResultsCount, out int totalResultsCount)
+        public IList<Customer> YourCustomSearchFunc(DataTableAjaxPostModel model, out int filteredResultsCount, out int totalResultsCount)
         {
             var searchBy = (model.search != null) ? model.search.value : null;
             var take = model.length;
@@ -65,7 +70,7 @@ namespace DataTableTest.Controllers
             if (result == null)
             {
                 // empty collection...
-                return new List<Person>();
+                return new List<Customer>();
             }
             return result;
         }
