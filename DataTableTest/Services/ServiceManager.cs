@@ -6,6 +6,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Linq.Dynamic;
 using System.Web;
+using System.Data.Entity;
 
 namespace DataTableTest.Services
 {
@@ -46,7 +47,7 @@ namespace DataTableTest.Services
 
             return result;
         }
-        private Expression<Func<Customer, bool>> BuildDynamicWhereClause(TravelTestDBEntities entities, string searchValue)
+        private Expression<Func<Customer, bool>> BuildDynamicWhereClause(DbContext entities, string searchValue)
         {
             // simple method to dynamically plugin a where clause
             var predicate = PredicateBuilder.New<Customer>(true); // true -where(true) return all
