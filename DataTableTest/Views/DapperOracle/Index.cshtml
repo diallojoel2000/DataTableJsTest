@@ -1,0 +1,43 @@
+﻿@{
+	ViewBag.Title = "Payment";
+}
+<div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<table id="SearchResultTable" class="display" style="width:100%">
+		<thead>
+			<tr>
+				<th>Account ID</th>
+
+				<th>Beneficiary</th>
+				
+			</tr>
+		</thead>
+
+	</table>
+</div>
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"  />
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script>
+    var table = $('#SearchResultTable').DataTable({
+    "processing": true,
+    "serverSide": true,
+    "ajax": {
+        url: "@Url.Action("GetPayment", "DapperOracle")",
+        type: 'POST'
+    },
+    "language": {
+        "search": "",
+        "searchPlaceholder": "Search..."
+    },
+   "columns": [
+	   { "data": "ACCOUNT_ID" },
+	   { "data": "BENEFICIARY" },
+       
+    ]
+});
+</script>

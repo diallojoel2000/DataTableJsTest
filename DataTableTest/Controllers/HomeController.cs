@@ -15,8 +15,15 @@ namespace DataTableTest.Controllers
         {
             return View();
         }
-
-        public JsonResult CustomServerSideSearchAction(DataTableAjaxPostModel model)
+		public ActionResult Payment()
+		{
+			return View();
+		}
+		public ActionResult PaymentLog()
+		{
+			return View();
+		}
+		public JsonResult CustomServerSideSearchAction(DataTableAjaxPostModel model)
         {
             // action inside a standard controller
             int filteredResultsCount;

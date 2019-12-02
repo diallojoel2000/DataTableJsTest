@@ -1,0 +1,59 @@
+﻿@{
+	ViewBag.Title = "Payment";
+}
+<div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<table id="SearchResultTable" class="display" style="width:100%">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>PAYMENT_ID</th>
+				<th>PAYMENT_SOURCE</th>
+				<th>ACTION_DATE</th>
+				<th>STATUS</th>
+				<th>SERVICE_CODE</th>
+				<th>SERVICE_DESCRIPTION</th>
+				<th>PAYMENT_BATCH</th>
+				<th>MODULE_NAME</th>
+				<th>SERVICE_NAME</th>
+				<th>TRANSACTION_TYPE</th>
+			</tr>
+		</thead>
+
+	</table>
+</div>
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script>
+    var table = $('#SearchResultTable').DataTable({
+    "processing": true,
+    "serverSide": true,
+    "ajax": {
+        url: "@Url.Action("GetPayment", "PaymentLog")",
+        type: 'POST'
+    },
+    "language": {
+        "search": "",
+        "searchPlaceholder": "Search..."
+    },
+   "columns": [
+	   { "data": "ID" },
+	   { "data": "PAYMENT_ID" },
+	   { "data": "PAYMENT_SOURCE" },
+	   { "data": "ACTION_DATE" },
+	   { "data": "STATUS" },
+	   { "data": "SERVICE_CODE" },
+	   { "data": "SERVICE_DESCRIPRION" },
+	   { "data": "PAYMENT_BATCH" },
+	   { "data": "MODULE_NAME" },
+	   { "data": "SERVICE_NAME" },
+	   { "data": "TRANSACTION_TYPE" },
+
+    ]
+});
+</script>
